@@ -1,0 +1,15 @@
+*cpython-310*
+*__pycache__
+*egg-info
+/data
+docs
+cache
+logs
+outputs
+wandb
+config
+venv
+CLAUDE.md
+sample_codes
+sbatch_log
+venv2

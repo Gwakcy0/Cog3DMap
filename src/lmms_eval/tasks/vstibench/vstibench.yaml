@@ -1,0 +1,37 @@
+dataset_path: data/vstibench
+dataset_kwargs:
+  token: True
+  cache_dir: vstibench
+  video: True
+task: vstibench
+test_split: test
+output_type: generate_until
+doc_to_visual: !function utils.vstibench_doc_to_visual
+doc_to_text: !function utils.vstibench_doc_to_text
+doc_to_target: "ground_truth"
+generation_kwargs:
+  max_new_tokens: 16
+  temperature: 0
+  top_p: 1.0
+  num_beams: 1
+  do_sample: false
+process_results: !function utils.vstibench_process_results
+metric_list:
+  - metric: vstibench_score
+    aggregation: !function utils.vstibench_aggregate_results
+    higher_is_better: true
+lmms_eval_specific_kwargs:
+  default:
+    pre_prompt: "These are frames of a video."
+    mca_post_prompt: "Answer with the option's letter from the given choices directly."
+    na_post_prompt: "Please answer the question using a single word or phrase."
+  gemini_api:
+    pre_prompt: "These are frames of a video."
+    mca_post_prompt: "Answer with the option's letter from the given choices directly."
+    na_post_prompt: "Do not response anything other than a single number!"
+  gpt4v:
+    pre_prompt: "These are frames of a video."
+    mca_post_prompt: "Answer with the option's letter from the given choices directly."
+    na_post_prompt: "Do not response anything other than a single number!"
+metadata:
+  version: 0.0

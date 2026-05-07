@@ -1,0 +1,28 @@
+dataset_path: data/evaluation/spar_subset_point3r
+dataset_kwargs:
+  token: True
+task: spar_subset_point3r
+test_split: test
+output_type: generate_until
+doc_to_visual: !function utils.spar_subset_doc_to_visual
+doc_to_text: !function utils.spar_subset_doc_to_text
+doc_to_target: "ground_truth"
+generation_kwargs:
+  max_new_tokens: 128
+  temperature: 0
+  top_p: 1.0
+  num_beams: 1
+  do_sample: false
+  presence_penalty: 1.5
+  repetition_penalty: 1.0
+process_results: !function utils.spar_subset_process_results
+metric_list:
+  - metric: spar_subset_point3r_score
+    aggregation: !function utils.spar_subset_aggregate_results
+    higher_is_better: true
+lmms_eval_specific_kwargs:
+  default:
+    pre_prompt: ""
+metadata:
+  media_dir: data/media/
+  version: 0.0
