@@ -1162,7 +1162,7 @@ def set_seed(seed=42):
 
 if __name__=='__main__':
     set_seed(42)
-    sample_ct = 32
+    sample_ct = 16
     pointer_format = "video"
     use_merge = True
     input_images_dir = f"./demo_data/ScanNet_scene0000_00"
