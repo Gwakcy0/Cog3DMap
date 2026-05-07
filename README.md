@@ -2,8 +2,8 @@
 
 <div align="center" margin-bottom="3em">
 
-[![arXiv](https://img.shields.io/badge/arXiv-2603.23023-green)](https://arxiv.org/abs/2603.23023)
-[![Website](https://img.shields.io/badge/Website-Cog3DMap-blue)](https://cog3dmap.github.io)
+[![arXiv](https://img.shields.io/badge/arXiv-2603.23023-green)](#)
+[![Website](https://img.shields.io/badge/Website-Cog3DMap-blue)](#)
 [![Code](https://img.shields.io/badge/Code-TBD-lightgrey)](#)
 
 </div>
